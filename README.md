@@ -1,4 +1,4 @@
-Paper Theme
+FlatUI GTK Theme
 ===========
 
 FlatUI is a modern desktop theme suite. Its design is mostly flat with a minimal use of shadows for depth.
