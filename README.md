@@ -1,21 +1,19 @@
 Paper Theme
 ===========
 
-#### Development of the Paper GTK theme has ended
+FlatUI is a modern desktop theme suite. Its design is mostly flat with a minimal use of shadows for depth.
 
-Paper is a modern desktop theme suite. Its design is mostly flat with a minimal use of shadows for depth.
+FlatUI has been developed primarily with modern GTK3 (GNOME-based) desktop environments in mind, legacy-toolkit and GTK2 environments will not provide an ideal experience, as much of the visual design relies on modern GTK3+ widgets.
 
-Paper has been developed primarily with modern GTK3 (GNOME-based) desktop environments in mind, legacy-toolkit and GTK2 environments will not provide an ideal experience, as much of the visual design relies on modern GTK3+ widgets.
+FlatUI is distributed under the terms the GNU General Public License (GNU GPL v.3).
 
-Paper is distributed under the terms the GNU General Public License (GNU GPL v.3).
+### Getting FlatUI
 
-### Getting Paper
+You can clone from the [git repository](https://github.com/Spez-Inc/flatui-gtk-theme).
 
-You can download the Paper [here](http://snwh.org/paper) or it clone from the [git repository](https://github.com/snwh/paper-gtk-theme).
+### Building FlatUI
 
-### Building Paper
-
-You can build and install the Paper GTK theme from source:
+You can build and install the FlatUI GTK theme from source:
 
     ./autogen.sh
     make
@@ -23,9 +21,9 @@ You can build and install the Paper GTK theme from source:
 
 This procedure requires ```autotools``` on your system.
 
-### Installing Paper
+### Installing FlatUI
 
-Alternatively you may install Paper with the provided installation script:
+Alternatively you may install FlatUI with the provided installation script:
 
     ./install-gtk-theme.sh
 

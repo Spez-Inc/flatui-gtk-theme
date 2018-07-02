@@ -22,9 +22,9 @@
 # this program; if not, see <https://www.gnu.org/licenses/lgpl-3.0.txt>
 
 clear
-echo '#-----------------------------------------#'
-echo '#     Paper GTK Theme Install Script      #'
-echo '#-----------------------------------------#'
+echo '#------------------------------------------#'
+echo '#     FlatUI GTK Theme Install Script      #'
+echo '#------------------------------------------#'
 
 
 show_question() {
@@ -53,31 +53,31 @@ esac
 
 function main {
 if [ "$UID" -eq "$ROOT_UID" ]; then
-	if [ -d /usr/share/themes/Paper ]; then
+	if [ -d /usr/share/themes/FlatUI ]; then
 		echo
 		show_question '\tFound an existing installation. Replace it? (Y)es, (N)o : ' 
 		echo
 		read INPUT
 		case $INPUT in
-			[Yy]* ) rm -Rf /usr/share/themes/Paper 2>/dev/null;;
+			[Yy]* ) rm -Rf /usr/share/themes/FlatUI 2>/dev/null;;
 			[Nn]* );;
 		    * ) clear; show_error '\tSorry, try again.'; main;;
 		esac
 	fi
 	echo "Installing..."
-	cp -R ./Paper/ /usr/share/themes/
-	chmod -R 755 /usr/share/themes/Paper
+	cp -R ./FlatUI/ /usr/share/themes/
+	chmod -R 755 /usr/share/themes/FlatUI
 	echo "Installation complete!"
 	echo "You will have to set your theme manually."
 	end
 elif [ "$UID" -ne "$ROOT_UID" ]; then
-	if [ -d $HOME/.local/share/themes/Paper ]; then
+	if [ -d $HOME/.local/share/themes/FlatUI ]; then
 		echo
 		show_question '\tFound an existing installation. Replace it? (Y)es, (N)o : ' 
 		echo
 		read INPUT
 		case $INPUT in
-			[Yy]* ) rm -Rf "$HOME/.local/share/themes/Paper" 2>/dev/null;;
+			[Yy]* ) rm -Rf "$HOME/.local/share/themes/FlatUI" 2>/dev/null;;
 			[Nn]* );;
 		    * ) clear; show_error '\tSorry, try again.'; main;;
 		esac
@@ -85,10 +85,10 @@ elif [ "$UID" -ne "$ROOT_UID" ]; then
 	echo "Installing..."
 	# .local/share/themes
 	install -d $HOME/.local/share/themes
-	cp -R ./Paper/ $HOME/.local/share/themes/
+	cp -R ./FlatUI/ $HOME/.local/share/themes/
 	# .themes
 	install -d $HOME/.themes
-	cp -R ./Paper/ $HOME/.themes/
+	cp -R ./FlatUI/ $HOME/.themes/
 	echo "Installation complete!"
 	set
 fi
@@ -98,7 +98,7 @@ fi
 
 function set {
 echo
-show_question '\tDo you want to set Paper as desktop theme? (Y)es, (N)o : ' 
+show_question '\tDo you want to set FlatUI as desktop theme? (Y)es, (N)o : ' 
 echo
 read INPUT
 case $INPUT in
@@ -109,11 +109,11 @@ esac
 }
 
 function settheme {
-echo "Setting Paper as desktop GTK theme..."
+echo "Setting FlatUI as desktop GTK theme..."
 gsettings reset org.gnome.desktop.interface gtk-theme
 gsettings reset org.gnome.desktop.wm.preferences theme
-gsettings set org.gnome.desktop.interface gtk-theme "Paper"
-gsettings set org.gnome.desktop.wm.preferences theme "Paper"
+gsettings set org.gnome.desktop.interface gtk-theme "FlatUI"
+gsettings set org.gnome.desktop.wm.preferences theme "FlatUI"
 echo "Done."
 setthemegnome
 }
@@ -121,11 +121,11 @@ setthemegnome
 function setthemegnome {
 if [ -d /usr/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/ ]; then	
 	echo
-	show_question '\tWould you like to use Paper as your GNOME Shell theme? (Y)es, (N)o : '
+	show_question '\tWould you like to use FlatUI as your GNOME Shell theme? (Y)es, (N)o : '
 	echo
 	read INPUT
 	case $INPUT in
-		[Yy]* ) gsettings set org.gnome.shell.extensions.user-theme name "Paper";;
+		[Yy]* ) gsettings set org.gnome.shell.extensions.user-theme name "FlatUI";;
 	    [Nn]* ) end;;
 	    * ) echo; show_error "\aUh oh, invalid response. Please retry."; set;;
 	esac
@@ -144,7 +144,7 @@ function end {
 ROOT_UID=0
 if [ "$UID" -ne "$ROOT_UID" ]; then
 	echo
-	echo "Paper GTK Theme will be installed in:"
+	echo "FlatUI GTK Theme will be installed in:"
 	echo
 	show_dir '\t$HOME/.local/share/themes'
 	echo
@@ -152,7 +152,7 @@ if [ "$UID" -ne "$ROOT_UID" ]; then
 	continue
 else
 	echo
-	echo "Paper GTK Theme will be installed in:"
+	echo "FlatUI GTK Theme will be installed in:"
 	echo
 	show_dir '\t/usr/share/themes'
 	echo

@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=FlatUI GTK+ Theme
+Icon=preferences-desktop-theme
+Exec=bash -c 'notify-send "FlatUI GTK+ Theme" "Getting the latest version of the FlatUI themes..." -i system-software-update; cd /tmp/; rm -Rf /tmp/flatui-gtk-theme.zip 2>/dev/null; rm -Rf /tmp/flatui-gtk-theme-master/ 2>/dev/null; wget https://github.com/Spez-Inc/flatui-gtk-theme/archive/master.zip -O flatui-gtk-theme.zip; unzip flatui-gtk-theme.zip; cd flatui-gtk-theme-master; rm -Rf "$HOME/.local/share/themes/FlatUI" 2>/dev/null; install -d $HOME/.local/share/themes; cp -R ./FlatUI/ $HOME/.local/share/themes/; install -d $HOME/.themes; cp -R ./FlatUI/ $HOME/.themes/;gsettings reset org.gnome.desktop.interface theme; gsettings set org.gnome.desktop.interface theme "FlatUI"; notify-send "All done!" "Enjoy the latest version of FlatUI!" -i face-smile'

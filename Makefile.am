@@ -11,4 +11,4 @@ install-data-hook:
 	cp -Rv Paper $(DESTDIR)/usr/share/themes/.
 
 uninstall-hook:
-	test -e $(DESTDIR)/usr/share/themes/Paper && rm -rfv $(DESTDIR)/usr/share/themes/Paper
+	test -e $(DESTDIR)/usr/share/themes/FlatUI && rm -rfv $(DESTDIR)/usr/share/themes/Paper

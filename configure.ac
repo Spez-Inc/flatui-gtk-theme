@@ -8,7 +8,7 @@ AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
 
 AC_MSG_RESULT([
-        Paper Icon Theme $VERSION
+        FlatUI Icon Theme $VERSION
         ========
 
         prefix:                 ${prefix}

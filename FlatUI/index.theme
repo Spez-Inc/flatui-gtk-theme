@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=FlatUI
+Comment=by Spez Inc.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=FlatUI
+MetacityTheme=FlatUI
+IconTheme=FlatUI
